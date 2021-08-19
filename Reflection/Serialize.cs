@@ -12,6 +12,7 @@ namespace Reflection
         private static readonly string _separator = ",";
         private static readonly string _endRow = "\n";
         private static readonly BindingFlags _bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+        
         public static string SerializeFromObjectToCsv(object? obj)
         {
             var objectType = obj.GetType();
