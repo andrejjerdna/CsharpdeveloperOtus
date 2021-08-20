@@ -30,7 +30,7 @@ namespace Reflection
             return output.Trim();
         }
         
-        public static T DeserializeFromCsvToObject<T>(string csv) where T: class, new()
+        public static T? DeserializeFromCsvToObject<T>(string? csv) where T: class, new()
         {
             if(string.IsNullOrEmpty(csv))
                 return null;
