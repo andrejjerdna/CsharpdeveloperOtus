@@ -27,11 +27,11 @@ namespace Reflection
             
             Console.WriteLine("Results Newtonsoft: {0}", json);
             
-            ResetTime(timer, "My Newtonsoft serialize:");
+            ResetTime(timer, "Newtonsoft serialize:");
             
             var m = JsonConvert.DeserializeObject<F>(json);
             
-            ResetTime(timer, "My Newtonsoft deserialize:");
+            ResetTime(timer, "Newtonsoft deserialize:");
             
             timer.Stop();
         }
