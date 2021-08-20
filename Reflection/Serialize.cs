@@ -30,8 +30,11 @@ namespace Reflection
             return output.Trim();
         }
         
-        public static T DeserializeFromCsvToObject<T>(string csv) where T: new()
+        public static T DeserializeFromCsvToObject<T>(string csv) where T: class, new()
         {
+            if(string.IsNullOrEmpty(csv))
+                return null;
+            
             var targetObject = new T();
             var targetType = targetObject.GetType();
 
