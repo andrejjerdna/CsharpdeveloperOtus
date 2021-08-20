@@ -30,7 +30,7 @@ namespace Reflection
             return output.Trim();
         }
         
-        public static T DeserializeFromCsvToObject<T>(string csv) where T : new()
+        public static T DeserializeFromCsvToObject<T>(string csv) where T: new()
         {
             var targetObject = new T();
             var targetType = targetObject.GetType();
@@ -44,10 +44,7 @@ namespace Reflection
                 var propInfo = targetType.GetProperty(prop.name, _bindFlags);
                 propInfo?.SetValue(targetObject,
                     Convert.ChangeType(prop.val, propInfo.PropertyType), null);
-            }
-            
-            foreach (var prop in data)
-            {
+                
                 var fieldInfo = targetType.GetField(prop.name, _bindFlags);
                 fieldInfo?.SetValue(targetObject, Convert.ChangeType(prop.val, fieldInfo.FieldType));
             }
