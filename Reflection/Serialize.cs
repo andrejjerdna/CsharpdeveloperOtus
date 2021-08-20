@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 
@@ -9,12 +6,15 @@ namespace Reflection
 {
     public class Serialize
     {
-        private static readonly string _separator = ",";
-        private static readonly string _endRow = "\n";
+        private const string Separator = ",";
+        private const string EndRow = "\n";
         private static readonly BindingFlags _bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
         
         public static string SerializeFromObjectToCsv(object? obj)
         {
+            if(obj == null)
+                return string.Empty;
+            
             var objectType = obj.GetType();
             var properties = objectType.GetProperties(_bindFlags)
                 .Select(p => new {name = p.Name, type = p.PropertyType, val = p.GetValue(obj)});
@@ -38,8 +38,8 @@ namespace Reflection
             var targetObject = new T();
             var targetType = targetObject.GetType();
 
-            var data = csv.Split(_endRow)
-                .Select(r => r.Split(_separator))
+            var data = csv.Split(EndRow)
+                .Select(r => r.Split(Separator))
                 .Select(v => new {name = v.First(), val = v.Last()});
 
             foreach (var prop in data)
@@ -55,9 +55,9 @@ namespace Reflection
             return targetObject;
         }
 
-        private static string RowGenerate(string name, object val)
+        private static string RowGenerate(string name, object? val)
         {
-            return name + _separator + val + _endRow;
+            return name + Separator + val + EndRow;
         }
     }
 }
