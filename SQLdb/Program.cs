@@ -6,7 +6,11 @@ namespace SQLdb
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var dd = new SqlProvider();
+
+            var version = dd.GetVersion();
+            
+            Console.WriteLine(version);
         }
     }
 }
