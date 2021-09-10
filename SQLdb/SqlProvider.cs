@@ -4,7 +4,7 @@ namespace SQLdb
 {
     public class SqlProvider
     {
-        private const string ConnectionString = "Host=localhost;Username=andrey;Password=12345;Database=otus";
+        private const string ConnectionString = @"Host=localhost;Username=postgres;Password=q1q2q3;Database=otus";
 
         public string? GetVersion()
         {

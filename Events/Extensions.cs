@@ -15,10 +15,8 @@ namespace Events
         /// <returns></returns>
         public static T? GetMax<T>(this IEnumerable<T> e, Func<T, float> getParameter) where T : class
         {
-            return e.Select(rr => new { item = rr, rrr = getParameter(rr) })
-                .OrderBy(t => t.rrr)
-                .FirstOrDefault()
-                ?.item;
+            var maxValue = e.Max(getParameter);
+            return e.Where(obj => Math.Abs(getParameter(obj) - maxValue) < 0.00000001).FirstOrDefault();
         }
     }
 }
