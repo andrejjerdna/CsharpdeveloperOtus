@@ -54,14 +54,13 @@ namespace SQLdb
                 try
                 {
                     cmd.ExecuteNonQuery();
+                    CreateMessage?.Invoke(null, $"Stores create.");
                 }
-                catch
+                catch 
                 {
-
+                    CreateMessage?.Invoke(null, $"Stores not create.");
                 }
             }
-            
-            CreateMessage?.Invoke(null, $"Stores create.");
         }
         
         /// <summary>
@@ -69,9 +68,9 @@ namespace SQLdb
         /// </summary>
         private void ProductsGenerator()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
-                var storeId = _random.Next(2, 5);
+                var storeId = _random.Next(1, 1000);
                 var price = _random.Next(1, 1000);
                 var productName = Path.GetRandomFileName();
                 
@@ -86,14 +85,13 @@ namespace SQLdb
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        CreateMessage?.Invoke(null, $"Generate product: {productName}, price: {price} for store id: {storeId} ");
                     }
                     catch
                     {
 
                     }
                 }
-                
-                CreateMessage?.Invoke(null, $"Generate product: {productName}, price: {price} for store id: {storeId} ");
             }
         }
         
@@ -102,7 +100,7 @@ namespace SQLdb
         /// </summary>
         private void PurchasesGenerator()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var productId = _random.Next(0, 1000);
                 var date = DateTime.Now;
@@ -117,14 +115,13 @@ namespace SQLdb
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        CreateMessage?.Invoke(null, $"Generate purchase: {date} for product id: {productId} ");
                     }
                     catch
                     {
 
                     }
                 }
-                
-                CreateMessage?.Invoke(null, $"Generate purchase: {date} for product id: {productId} ");
             }
         }
         
@@ -133,7 +130,7 @@ namespace SQLdb
         /// </summary>
         private void CustomersGenerator()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var purchaseId = _random.Next(0, 1000);
                 var firstName = Path.GetRandomFileName();
@@ -157,14 +154,13 @@ namespace SQLdb
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        CreateMessage?.Invoke(null, $"Generate customers. {firstName} {lastName} email: {email} address: {address}");
                     }
                     catch
                     {
 
                     }
                 }
-                
-                CreateMessage?.Invoke(null, $"Generate customers. {firstName} {lastName} email: {email} address: {address}");
             }
         }
     }
