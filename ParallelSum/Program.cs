@@ -4,7 +4,7 @@ var generator = new DataGenerator();
 
 var collection1 = generator.GenerateColletion(100000);
 var collection2 = generator.GenerateColletion(1000000);
-var collection3 = generator.GenerateColletion(1000000000);
+var collection3 = generator.GenerateColletion(10000000);
 
 var summator = new Summator();
 
