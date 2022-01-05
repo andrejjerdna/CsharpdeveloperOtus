@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelSum", "ParallelSum\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewFeatures", "NewFeatures\NewFeatures.csproj", "{5E697DEB-73D0-46EA-A918-71297FD992E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Prototype\Prototype.csproj", "{2674624A-EADD-48CA-96EC-0B68F6C6567E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5E697DEB-73D0-46EA-A918-71297FD992E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E697DEB-73D0-46EA-A918-71297FD992E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E697DEB-73D0-46EA-A918-71297FD992E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2674624A-EADD-48CA-96EC-0B68F6C6567E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2674624A-EADD-48CA-96EC-0B68F6C6567E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2674624A-EADD-48CA-96EC-0B68F6C6567E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2674624A-EADD-48CA-96EC-0B68F6C6567E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
