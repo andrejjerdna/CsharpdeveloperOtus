@@ -4,9 +4,6 @@
     {
         public Guid Guid { get; init; } = Guid.NewGuid();
 
-        public virtual object Clone()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract object Clone();
     }
 }
