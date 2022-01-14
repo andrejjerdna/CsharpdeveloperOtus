@@ -23,6 +23,8 @@ ResultWriter(summator.LinqSum(collection1));
 ResultWriter(summator.LinqSum(collection2));
 ResultWriter(summator.LinqSum(collection3));
 
+Console.ReadKey();
+
 void ResultWriter(AdditionResult additionResult)
 {
     Console.ForegroundColor = ConsoleColor.White;
